@@ -8,20 +8,35 @@
        [else #t])))
 
 
-(define test_exp "+*2p1+$2")
+(define test_exp "+*2$1+$2 1")
 
-; code used for checking if each operation exists in the set of valid operations to use (returns true or false)
-; this code does NOT yet confirm if the expression is actually valid.
-(define valid_operations '("+" "*" "/" "-" "$"))
-(define (check_operations lst)
-  (andmap (lambda (c)
-         (or (char-numeric? c)
-              (member (string c) valid_operations))) lst))
-         
   
+; reads the expression from the user
 (define expression_input (read-line))
 
-(define (validate_expression expression)
-  (displayln (string-split expression)))
+; HELPER FUNCTION (split_exp) - converts digits in a string format to an actual number ("8" -> 8)
+(define (convert_str_to_num str)
+  (if (regexp-match? #px"^\\d+$" str)
+      (string->number str)
+      str))
+
+; this splits the expression into a list of operators and digits (str -> lst)
+; returns the list of all multi-digit nums, single digit nums, and operators
+(define (split_exp str)
+  (regexp-match* #px"\\d+|\\S" str))
+
+; HELPER VALUE (check_operations) - this code does NOT yet confirm if the expression is actually valid.
+(define valid_operations '("+" "*" "/" "-" "$"))
+
+; this checks if the split expression is valid (lst -> #t or #f)
+; uses regex to find the digits
+(define (check_operations lst)
+  (andmap (lambda (c)
+         (or (regexp-match? #px"^\\d+$" c) 
+              (member c valid_operations))) lst))
+
+; main evaluation function that runs all checks on the expression input (input_expression -> #t or #f) throws an error if #f
+(define (validate_expression str)
+  (check_operations (split_exp str)))
   
 
