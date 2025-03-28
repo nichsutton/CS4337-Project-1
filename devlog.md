@@ -33,4 +33,11 @@ This session I plan finish the list creation so it includes the "-" and "$" oper
 I also plan to finish the calculation process with both interative and batch mode.
 I plan to finish the error handling for dividing by zeros and if there are too few operators, operands, or an incorrect order.
 
+- I have finished the list creation
+- now I need to check if the expression in syntacitally correct
+- - To do this I need to check if each operator is unary or binary to decide how many operands it takes. I need to check if each operator correctly calculates their operands such that there are no operands remaining. I also implemented the convert_str_to_num function
+- The expression validation for syntax is now finished.
+- Now I need to check dividing by zero errors and start outputting errors to the screen.
+- now I need to implement the calculator to compute results without using the history reference first
+
 
