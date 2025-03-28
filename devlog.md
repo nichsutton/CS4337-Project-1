@@ -28,4 +28,9 @@ This session I was unable to fully check if an expression can be solved without 
 I have made good progress towards the overall structure, successfully splitting the expression into a list and creating a function to turn
 string numbers into integer numbers. One main issue I have encountered is the $n value, I will revisit these function to take it into account once I have implemented the history feature. Next session I will start on the actual calculations for the expression.
 
+# 03/27/2025 11:03 - Session Start
+This session I plan finish the list creation so it includes the "-" and "$" operators in groups such that one element will become "-5" or "$4"
+I also plan to finish the calculation process with both interative and batch mode.
+I plan to finish the error handling for dividing by zeros and if there are too few operators, operands, or an incorrect order.
+
 
