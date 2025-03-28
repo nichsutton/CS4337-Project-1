@@ -7,9 +7,7 @@
        [(string=? (vector-ref args 0) "--batch") #f]
        [else #t])))
 
-
 (define test_exp "+++++*2$1+-$22 1")
-
   
 ; reads the expression from the user
 (define expression_input (read-line))
@@ -61,10 +59,6 @@
   )
 )
 
-(check_syntax (split_exp test_exp))
-
-
-
 ; this checks if the split expression is valid (lst -> #t or #f)
 ; uses regex to find the digits
 (define (check_operations lst)
@@ -73,12 +67,19 @@
       (and (string? c) (or (member c valid_operations) (regexp-match? #px"^\\$\\d+$" c)))))
       lst))
 
-
-
 ; main evaluation function that runs all checks on the expression input (input_expression -> #t or #f) throws an error if #f
 (define (validate_expression str)
-  (check_operations (split_exp str)))
+  (cond
+    [(not (check_operations (split_exp str)))
+      (error "Error: Invalid operations or values used.")
+    ]
+    [(not (check_syntax (split_exp str)))
+      (error "Error: Invalid prefix syntax.")
+    ]
+    [else #t]
+  )
+)
+
+(validate_expression test_exp)
   
-(split_exp test_exp)
-(check_operations (split_exp test_exp))
 

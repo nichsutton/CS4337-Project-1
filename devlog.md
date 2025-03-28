@@ -28,7 +28,7 @@ This session I was unable to fully check if an expression can be solved without 
 I have made good progress towards the overall structure, successfully splitting the expression into a list and creating a function to turn
 string numbers into integer numbers. One main issue I have encountered is the $n value, I will revisit these function to take it into account once I have implemented the history feature. Next session I will start on the actual calculations for the expression.
 
-# 03/27/2025 11:03 - Session Start
+# 03/27/2025 11:03 PM - Session Start
 This session I plan finish the list creation so it includes the "-" and "$" operators in groups such that one element will become "-5" or "$4"
 I also plan to finish the calculation process with both interative and batch mode.
 I plan to finish the error handling for dividing by zeros and if there are too few operators, operands, or an incorrect order.
@@ -37,7 +37,9 @@ I plan to finish the error handling for dividing by zeros and if there are too f
 - now I need to check if the expression in syntacitally correct
 - - To do this I need to check if each operator is unary or binary to decide how many operands it takes. I need to check if each operator correctly calculates their operands such that there are no operands remaining. I also implemented the convert_str_to_num function
 - The expression validation for syntax is now finished.
-- Now I need to check dividing by zero errors and start outputting errors to the screen.
+- Now I need to check dividing by zero errors and start outputting errors to the screen. (this cannot be done until I implement the actual calculations)
 - now I need to implement the calculator to compute results without using the history reference first
 
+# 03/28/2025 1:39 AM - Session End
+I have finished most of the error checking and have been researching methods to implement the actual calculation process. I have been able to group history tagged numbers with their "$" and store them in the list. For my next session I plan to finish the calculation process on both the batch and interaction version, and finish the project. This includes the history retrieval when given the "$n" input, int -> float conversions, and any unforeseen errors that may need to be accounted for.
 
