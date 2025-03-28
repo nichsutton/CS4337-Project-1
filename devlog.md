@@ -43,3 +43,6 @@ I plan to finish the error handling for dividing by zeros and if there are too f
 # 03/28/2025 1:39 AM - Session End
 I have finished most of the error checking and have been researching methods to implement the actual calculation process. I have been able to group history tagged numbers with their "$" and store them in the list. For my next session I plan to finish the calculation process on both the batch and interaction version, and finish the project. This includes the history retrieval when given the "$n" input, int -> float conversions, and any unforeseen errors that may need to be accounted for.
 
+# 03/28/2025 11:36 AM - Session Start
+This session I plan to completely finish the prefix calculation so that it returns an output with a usage history.
+
