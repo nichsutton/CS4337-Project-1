@@ -138,6 +138,7 @@
 
 ; the main function that runs the program and updates the calculation history 
 (define (main history)
+  (displayln "Enter a valid expression ('quit' to stop):")
   (let ([user-input (read-line)])
     (cond
       [(string-ci=? user-input "quit") (void)]

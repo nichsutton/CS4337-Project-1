@@ -62,3 +62,6 @@ Notes:
 - I have also noticed that when an error occurs it will sometimes crash the program. Researching methods to fix this led me to use the "with-handlers" function to allow a cleaner user experience.
 - most of the bugs have been ironed out, but there is still a slight error when dividing by 0s. it will not solve it, but briefly show the history value such that it did. 
 - The history bug is now fixed. I solved this by using error instead of displayln, then using with-handlers to interpret the error message and display it.
+
+# 03/28/2025 9:23 PM - Session End
+I have accomplish my goal for this session. There was one bug which I was unable to solve that will reset the history if a syntax error occurs. I suspect this is being caused by the error handling. Other than that, the program should run as expected.
