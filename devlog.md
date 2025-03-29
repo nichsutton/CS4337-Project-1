@@ -46,3 +46,19 @@ I have finished most of the error checking and have been researching methods to 
 # 03/28/2025 11:36 AM - Session Start
 This session I plan to completely finish the prefix calculation so that it returns an output with a usage history.
 
+The prefix-calculator function works as such:
+- First makes sure the input is valid and ready to be calculated
+- Find out if the current value is an operator and if it is binary or unary 
+- If it is binary we get the next 2 values needed to compute the operation with recursion
+- If it is unary we only get the 1 value
+- Then we apply the corresponding calculation function to complete the operation for that operator
+- If the value is a history reference we make sure it is not out of bounds 
+- If it a value reference we obtain the value at that reference index
+- This function is run through a main function that loops through each expression and adding it to the history
+
+Notes:
+- First i need to create functions that apply the operation on the operands
+- implemented the calculation, but there are still bugs where it solves parts of an invalid expression until it reaches an operator or operand that becomes invalid.
+- I have also noticed that when an error occurs it will sometimes crash the program. Researching methods to fix this led me to use the "with-handlers" function to allow a cleaner user experience.
+- most of the bugs have been ironed out, but there is still a slight error when dividing by 0s. it will not solve it, but briefly show the history value such that it did. 
+- The history bug is now fixed. I solved this by using error instead of displayln, then using with-handlers to interpret the error message and display it.
